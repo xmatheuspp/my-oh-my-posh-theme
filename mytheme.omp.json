@@ -1,0 +1,100 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "blocks": [
+        {
+            "alignment": "left",
+            "segments": [
+                {
+                    "foreground": "#ff0000",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#ef5350{{ end }}"
+                    ],
+                    "properties": {
+                        "always_enabled": true
+                    },
+                    "style": "plain",
+                    "template": " \ue286 ",
+                    "type": "exit"
+                },
+                {
+                    "foreground": "#ff0000",
+                    "style": "plain",
+                    "template": "{{ .UserName }}'s ",
+                    "type": "session"
+                },
+                {
+                    "foreground": "#00CCFF",
+                    "properties": {
+                        "style": "folder"
+                    },
+                    "style": "plain",
+                    "template": "{{ .Path }}/ ",
+                    "type": "path"
+                },
+                {
+                    "foreground": "#ff0000",
+                    "properties": {
+                        "fetch_status": true
+                    },
+                    "style": "plain",
+                    "template": "<#ffffff>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+                    "type": "git"
+                },
+                {
+                    "foreground": "#00CCFF",
+                    "properties": {
+                        "fetch_version": true
+                    },
+                    "style": "plain",
+                    "template": "<#ffffff>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+                    "type": "node"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "right",
+            "segments": [
+                {
+                    "foreground": "#ff0000",
+                    "style": "diamond",
+                    "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
+                    "type": "sysinfo"
+                },
+                {
+                    "foreground": "#00CCFF",
+                    "style": "diamond",
+                    "template": "<#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+                    "type": "sysinfo"
+                },
+                {
+                    "foreground": "#ffffff",
+                    "leading_diamond": "\u250b",
+                    "properties": {
+                        "style": "roundrock",
+                        "threshold": 0
+                    },
+                    "style": "diamond",
+                    "template": " {{ .FormattedMs }} ",
+                    "type": "executiontime"
+                }
+            ],
+            "type": "prompt"
+        },
+        {
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "#ff0000",
+                    "style": "plain",
+                    "template": "\u2b9e ",
+                    "type": "text"
+                }
+            ],
+            "type": "prompt"
+        }
+    ],
+    "final_space": true,
+    "version": 2
+}
