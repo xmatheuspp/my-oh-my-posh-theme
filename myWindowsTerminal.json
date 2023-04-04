@@ -1,0 +1,23 @@
+        {
+            "background": "#000000",
+            "black": "#0C0C0C",
+            "blue": "#FF0004",
+            "brightBlack": "#767676",
+            "brightBlue": "#00CEFF",
+            "brightCyan": "#FF0004",
+            "brightGreen": "#0021FF",
+            "brightPurple": "#B4009E",
+            "brightRed": "#881798",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#FF0004",
+            "cursorColor": "#262626",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#FF0000",
+            "name": "My Theme Personality",
+            "purple": "#881798",
+            "red": "#881798",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#00CEFF"
+        }
